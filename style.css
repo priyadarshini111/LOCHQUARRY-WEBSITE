@@ -363,3 +363,222 @@ h1, h2, h3, h4 {
     padding: 2rem 1rem;
     font-size: 0.9rem;
 }
+
+/* ========================================================================
+   FEATURE 1: ACTIVITY DETAILS MODAL STYLES
+   Interactive modal for viewing full activity information
+   ======================================================================== */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 2.5rem;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--dark-neutral);
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color var(--transition-speed);
+}
+
+.modal-close:hover {
+    background-color: var(--light-neutral);
+}
+
+.modal-body h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.modal-body > p {
+    color: var(--dark-neutral);
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.modal-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    background-color: var(--light-neutral);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-item strong {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.detail-item span {
+    color: var(--dark-neutral);
+    font-weight: 600;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.btn-secondary {
+    background-color: #ccc;
+    color: var(--dark-neutral);
+}
+
+.btn-secondary:hover {
+    background-color: #aaa;
+}
+
+@media (max-width: 600px) {
+    .modal-content {
+        padding: 1.5rem;
+        width: 95%;
+    }
+    
+    .modal-details-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-actions {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}
+
+/* ========================================================================
+   FEATURE 2: INTERACTIVE REVIEW CAROUSEL STYLES
+   Carousel with previous/next navigation buttons
+   ======================================================================== */
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.carousel-btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--white);
+    border: 2px solid var(--white);
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all var(--transition-speed) ease;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.carousel-btn:active {
+    transform: scale(0.98);
+}
+
+.carousel-content {
+    flex: 1;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.carousel-counter {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+/* Style for activity card "view details" link */
+.view-details-link {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color var(--transition-speed);
+    display: block;
+    margin-top: 0.5rem;
+}
+
+.activity-card:hover .view-details-link {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .carousel-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .carousel-btn {
+        width: 100%;
+    }
+    
+    .carousel-content {
+        order: 2;
+    }
+}

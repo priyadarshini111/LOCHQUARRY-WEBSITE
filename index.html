@@ -48,10 +48,19 @@
                 </div>
             </div>
 
-            <section class="review-banner">
+            <section class="review-banner" id="review-carousel-home">
                 <div class="container">
-                    <blockquote class="customer-quote">"We had a great time and loved all the different activities that we did"</blockquote>
-                    <cite class="customer-author">— 8th Gourock Guides</cite>
+                    <div class="carousel-container">
+                        <button class="carousel-btn carousel-prev" onclick="previousReview()">❮ Previous</button>
+                        <div class="carousel-content">
+                            <blockquote class="customer-quote" id="carousel-quote">Loading...</blockquote>
+                            <cite class="customer-author" id="carousel-author">Loading...</cite>
+                            <div class="carousel-counter">
+                                <span id="review-counter">1</span> / <span id="review-total">5</span>
+                            </div>
+                        </div>
+                        <button class="carousel-btn carousel-next" onclick="nextReview()">Next ❯</button>
+                    </div>
                 </div>
             </section>
         </section>
@@ -68,8 +77,8 @@
                     <a href="#" class="back-home-link" onclick="switchPage('home')">← Back to Homepage</a>
                 </div>
 
-                <div class="cards-grid">
-                    <div class="activity-card">
+                <div class="cards-grid" id="land-activities-grid">
+                    <div class="activity-card" id="activity-1" onclick="openActivityModal('activity-1')">
                         <div class="card-img-holder">
                             <img src="activities/land/hillwalking_1.jpg" alt="Hillwalking">
                         </div>
@@ -77,9 +86,13 @@
                             <h3>Hillwalking</h3>
                             <p>From short walks around the site to Munro-bagging expeditions, Lochquarry has it all! Walks can be tailored to suit any age or experience.</p>
                             <div class="meta-tag">Max group size: 12 | Ages 6+</div>
+                            <p class="view-details-link">👉 Click to view details</p>
+                        </div>
+                        <div class="activity-details" style="display: none;">
+                            <strong>Duration:</strong> 2-6 hours | <strong>Cost:</strong> £12 per person | <strong>Difficulty:</strong> Easy to Moderate
                         </div>
                     </div>
-                    <div class="activity-card">
+                    <div class="activity-card" id="activity-2" onclick="openActivityModal('activity-2')">
                         <div class="card-img-holder">
                             <img src="activities/land/archery_1.jpg" alt="Archery">
                         </div>
@@ -87,9 +100,13 @@
                             <h3>Archery</h3>
                             <p>Are you the next Robin Hood? Learn to hold a bow and fire an arrow and take part in fast and fun shootout competitions.</p>
                             <div class="meta-tag">Max group size: 6 | Ages 6+</div>
+                            <p class="view-details-link">👉 Click to view details</p>
+                        </div>
+                        <div class="activity-details" style="display: none;">
+                            <strong>Duration:</strong> 1.5 hours | <strong>Cost:</strong> £15 per person | <strong>Difficulty:</strong> Easy
                         </div>
                     </div>
-                    <div class="activity-card">
+                    <div class="activity-card" id="activity-3" onclick="openActivityModal('activity-3')">
                         <div class="card-img-holder">
                             <img src="activities/land/orienteering_1.jpg" alt="Orienteering">
                         </div>
@@ -97,9 +114,13 @@
                             <h3>Orienteering</h3>
                             <p>Set in the centre's grounds, find all the markers and make it back in time to show off your superior navigation knowledge.</p>
                             <div class="meta-tag">Groups of 2+, 1 map | Ages 6+</div>
+                            <p class="view-details-link">👉 Click to view details</p>
+                        </div>
+                        <div class="activity-details" style="display: none;">
+                            <strong>Duration:</strong> 1.5-2 hours | <strong>Cost:</strong> £8 per person | <strong>Difficulty:</strong> Moderate
                         </div>
                     </div>
-                    <div class="activity-card">
+                    <div class="activity-card" id="activity-4" onclick="openActivityModal('activity-4')">
                         <div class="card-img-holder">
                             <img src="activities/land/axe_1.jpg" alt="Axe Throwing">
                         </div>
@@ -107,6 +128,10 @@
                             <h3>Axe Throwing</h3>
                             <p>Take yourself back to a time of Vikings and have a go at throwing an axe. Try to hit the target, or better yet throw yourself a bullseye.</p>
                             <div class="meta-tag">Max group size: 6 | Ages 10+</div>
+                            <p class="view-details-link">👉 Click to view details</p>
+                        </div>
+                        <div class="activity-details" style="display: none;">
+                            <strong>Duration:</strong> 2 hours | <strong>Cost:</strong> £18 per person | <strong>Difficulty:</strong> Moderate
                         </div>
                     </div>
                 </div>
@@ -136,8 +161,8 @@
                     <a href="#" class="back-home-link" onclick="switchPage('home')">← Back to Homepage</a>
                 </div>
 
-                <div class="cards-grid">
-                    <div class="activity-card">
+                <div class="cards-grid" id="water-activities-grid">
+                    <div class="activity-card" id="activity-5" onclick="openActivityModal('activity-5')">
                         <div class="card-img-holder">
                             <img src="activities/water/kayaking_1.jpg" alt="Kayaking">
                         </div>
@@ -145,9 +170,13 @@
                             <h3>Kayaking</h3>
                             <p>Have a go at paddling, rolling and rafting in one of our brand new kayaks under expert tuition.</p>
                             <div class="meta-tag">Max group size: 8 | Ages 8+</div>
+                            <p class="view-details-link">👉 Click to view details</p>
+                        </div>
+                        <div class="activity-details" style="display: none;">
+                            <strong>Duration:</strong> 2-3 hours | <strong>Cost:</strong> £20 per person | <strong>Difficulty:</strong> Moderate
                         </div>
                     </div>
-                    <div class="activity-card">
+                    <div class="activity-card" id="activity-6" onclick="openActivityModal('activity-6')">
                         <div class="card-img-holder">
                             <img src="activities/water/kayaking_2.jpg" alt="Canoeing">
                         </div>
@@ -155,9 +184,13 @@
                             <h3>Canoeing</h3>
                             <p>Work single-handedly or in pairs to canoe the length of Lochquarry. You can even take a picnic with you and explore islands.</p>
                             <div class="meta-tag">Max group 8 boats (16 people) | Ages 6+</div>
+                            <p class="view-details-link">👉 Click to view details</p>
+                        </div>
+                        <div class="activity-details" style="display: none;">
+                            <strong>Duration:</strong> 2-4 hours | <strong>Cost:</strong> £18 per person | <strong>Difficulty:</strong> Easy to Moderate
                         </div>
                     </div>
-                    <div class="activity-card">
+                    <div class="activity-card" id="activity-7" onclick="openActivityModal('activity-7')">
                         <div class="card-img-holder">
                             <img src="activities/water/powerboating_1.jpg" alt="Powerboating">
                         </div>
@@ -165,6 +198,10 @@
                             <h3>Powerboating</h3>
                             <p>Take control of one of the Centre's two RIBs out on Lochquarry and try your hand at dynamic powerboating thrills.</p>
                             <div class="meta-tag">Max group size: 6 | Ages 12+</div>
+                            <p class="view-details-link">👉 Click to view details</p>
+                        </div>
+                        <div class="activity-details" style="display: none;">
+                            <strong>Duration:</strong> 1.5 hours | <strong>Cost:</strong> £25 per person | <strong>Difficulty:</strong> Moderate to Hard
                         </div>
                     </div>
                 </div>
@@ -194,8 +231,8 @@
                     <a href="#" class="back-home-link" onclick="switchPage('home')">← Back to Homepage</a>
                 </div>
 
-                <div class="cards-grid">
-                    <div class="activity-card">
+                <div class="cards-grid" id="rope-activities-grid">
+                    <div class="activity-card" id="activity-8" onclick="openActivityModal('activity-8')">
                         <div class="card-img-holder">
                             <img src="activities/rope/climbing_1.jpg" alt="Climbing">
                         </div>
@@ -203,9 +240,13 @@
                             <h3>Climbing</h3>
                             <p>Scale the highs of one of our local quarry slabs with premium hardware and fully guided ropes.</p>
                             <div class="meta-tag">Max group size: 8 | Ages 8+</div>
+                            <p class="view-details-link">👉 Click to view details</p>
+                        </div>
+                        <div class="activity-details" style="display: none;">
+                            <strong>Duration:</strong> 2-3 hours | <strong>Cost:</strong> £22 per person | <strong>Difficulty:</strong> Moderate
                         </div>
                     </div>
-                    <div class="activity-card">
+                    <div class="activity-card" id="activity-9" onclick="openActivityModal('activity-9')">
                         <div class="card-img-holder">
                             <img src="activities/rope/abseiling_1.jpg" alt="Abseiling">
                         </div>
@@ -213,9 +254,13 @@
                             <h3>Abseiling</h3>
                             <p>Take the scary step and abseil from the top of one of the local quarry slabs. There is a lovely view if you are brave enough to look!</p>
                             <div class="meta-tag">Max group size: 8 | Ages 8+</div>
+                            <p class="view-details-link">👉 Click to view details</p>
+                        </div>
+                        <div class="activity-details" style="display: none;">
+                            <strong>Duration:</strong> 2-3 hours | <strong>Cost:</strong> £22 per person | <strong>Difficulty:</strong> Moderate to Hard
                         </div>
                     </div>
-                    <div class="activity-card">
+                    <div class="activity-card" id="activity-10" onclick="openActivityModal('activity-10')">
                         <div class="card-img-holder">
                             <img src="activities/rope/pole_climb_1.jpg" alt="Pole Climb">
                         </div>
@@ -223,6 +268,10 @@
                             <h3>Pole Climb</h3>
                             <p>Ever wondered how telephone engineers get to the top of the telephone poles? Well, here's your chance to find out firsthand.</p>
                             <div class="meta-tag">Max group size: 8 | Ages 8+</div>
+                            <p class="view-details-link">👉 Click to view details</p>
+                        </div>
+                        <div class="activity-details" style="display: none;">
+                            <strong>Duration:</strong> 1.5-2 hours | <strong>Cost:</strong> £20 per person | <strong>Difficulty:</strong> Hard
                         </div>
                     </div>
                 </div>
@@ -309,11 +358,48 @@
 
     </main>
 
+    <!-- FEATURE 1: ACTIVITY DETAILS MODAL -->
+    <div id="activity-modal" class="modal" onclick="closeActivityModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeActivityModal()">&times;</button>
+            <div class="modal-body">
+                <h2 id="modal-activity-title">Activity Title</h2>
+                <p id="modal-activity-description">Activity description goes here</p>
+                <div class="modal-details-grid">
+                    <div class="detail-item">
+                        <strong>Duration:</strong>
+                        <span id="modal-duration">-</span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>Cost:</strong>
+                        <span id="modal-cost">-</span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>Difficulty:</strong>
+                        <span id="modal-difficulty">-</span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>Group Size:</strong>
+                        <span id="modal-group">-</span>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button class="btn btn-primary" onclick="alert('Booking feature coming soon!')">Book Activity</button>
+                    <button class="btn btn-secondary" onclick="closeActivityModal()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer class="main-footer">
         <p>&copy; 2026 Lochquarry Outdoor Centre. Priyadarshini.</p>
     </footer>
 
     <script>
+        /* ========================================================================
+           FEATURE 1: PAGE NAVIGATION (EXISTING)
+           Switches between different page sections with smooth transitions
+           ======================================================================== */
         function switchPage(pageId) {
             // Find all page sections and navbar buttons
             const pages = document.querySelectorAll('.page-view');
@@ -338,6 +424,226 @@
                 }
             });
         }
+
+        /* ========================================================================
+           FEATURE 2: ACTIVITY CARD MODAL - Interactive Details View
+           
+           This feature demonstrates:
+           - DOM manipulation (getElementById, textContent)
+           - Event listeners (onclick)
+           - Conditional logic (if statements)
+           - Working with HTML classes (classList)
+           
+           Users can click any activity card to view a modal with full details
+           including duration, cost, and difficulty level.
+           ======================================================================== */
+        
+        // Activity data object - demonstrates proper data structure
+        const activityData = {
+            'activity-1': {
+                title: 'Hillwalking',
+                description: 'From short walks around the site to Munro-bagging expeditions, Lochquarry has it all! Walks can be tailored to suit any age or experience.',
+                duration: '2-6 hours',
+                cost: '£12 per person',
+                difficulty: 'Easy to Moderate',
+                group: 'Max 12 people, Ages 6+'
+            },
+            'activity-2': {
+                title: 'Archery',
+                description: 'Are you the next Robin Hood? Learn to hold a bow and fire an arrow and take part in fast and fun shootout competitions.',
+                duration: '1.5 hours',
+                cost: '£15 per person',
+                difficulty: 'Easy',
+                group: 'Max 6 people, Ages 6+'
+            },
+            'activity-3': {
+                title: 'Orienteering',
+                description: 'Set in the centre\'s grounds, find all the markers and make it back in time to show off your superior navigation knowledge.',
+                duration: '1.5-2 hours',
+                cost: '£8 per person',
+                difficulty: 'Moderate',
+                group: 'Groups of 2+, Ages 6+'
+            },
+            'activity-4': {
+                title: 'Axe Throwing',
+                description: 'Take yourself back to a time of Vikings and have a go at throwing an axe. Try to hit the target, or throw yourself a bullseye!',
+                duration: '2 hours',
+                cost: '£18 per person',
+                difficulty: 'Moderate',
+                group: 'Max 6 people, Ages 10+'
+            },
+            'activity-5': {
+                title: 'Kayaking',
+                description: 'Have a go at paddling, rolling and rafting in one of our brand new kayaks under expert tuition.',
+                duration: '2-3 hours',
+                cost: '£20 per person',
+                difficulty: 'Moderate',
+                group: 'Max 8 people, Ages 8+'
+            },
+            'activity-6': {
+                title: 'Canoeing',
+                description: 'Work single-handedly or in pairs to canoe the length of Lochquarry. You can explore islands and take a picnic!',
+                duration: '2-4 hours',
+                cost: '£18 per person',
+                difficulty: 'Easy to Moderate',
+                group: 'Max 8 boats (16 people), Ages 6+'
+            },
+            'activity-7': {
+                title: 'Powerboating',
+                description: 'Take control of one of the Centre\'s two RIBs out on Lochquarry and try dynamic powerboating thrills.',
+                duration: '1.5 hours',
+                cost: '£25 per person',
+                difficulty: 'Moderate to Hard',
+                group: 'Max 6 people, Ages 12+'
+            },
+            'activity-8': {
+                title: 'Climbing',
+                description: 'Scale the highs of one of our local quarry slabs with premium hardware and fully guided ropes.',
+                duration: '2-3 hours',
+                cost: '£22 per person',
+                difficulty: 'Moderate',
+                group: 'Max 8 people, Ages 8+'
+            },
+            'activity-9': {
+                title: 'Abseiling',
+                description: 'Take the scary step and abseil from the top of the local quarry slabs. Lovely views if you\'re brave enough to look!',
+                duration: '2-3 hours',
+                cost: '£22 per person',
+                difficulty: 'Moderate to Hard',
+                group: 'Max 8 people, Ages 8+'
+            },
+            'activity-10': {
+                title: 'Pole Climb',
+                description: 'Ever wondered how telephone engineers get to the top of poles? Here\'s your chance to find out firsthand!',
+                duration: '1.5-2 hours',
+                cost: '£20 per person',
+                difficulty: 'Hard',
+                group: 'Max 8 people, Ages 8+'
+            }
+        };
+
+        // Open modal with activity details
+        function openActivityModal(activityId) {
+            // Get activity data from the data object (conditional logic)
+            const activity = activityData[activityId];
+            if(!activity) {
+                console.error('Activity not found');
+                return;
+            }
+
+            // Update modal content using DOM manipulation
+            document.getElementById('modal-activity-title').textContent = activity.title;
+            document.getElementById('modal-activity-description').textContent = activity.description;
+            document.getElementById('modal-duration').textContent = activity.duration;
+            document.getElementById('modal-cost').textContent = activity.cost;
+            document.getElementById('modal-difficulty').textContent = activity.difficulty;
+            document.getElementById('modal-group').textContent = activity.group;
+
+            // Show the modal by adding the 'active' class
+            document.getElementById('activity-modal').classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        // Close modal
+        function closeActivityModal(event) {
+            // Allow closing by clicking outside modal or the close button
+            if(event && event.target.id !== 'activity-modal') {
+                return;
+            }
+            document.getElementById('activity-modal').classList.remove('active');
+            document.body.style.overflow = 'auto'; // Re-enable background scrolling
+        }
+
+        // Close modal when pressing Escape key
+        document.addEventListener('keydown', function(e) {
+            if(e.key === 'Escape') {
+                closeActivityModal({target: document.getElementById('activity-modal')});
+            }
+        });
+
+        /* ========================================================================
+           FEATURE 3: INTERACTIVE REVIEW CAROUSEL
+           
+           This feature demonstrates:
+           - Array handling (array of review objects)
+           - Array indexing and length property
+           - Conditional logic (if/else for navigation limits)
+           - DOM manipulation (textContent updates)
+           - Event listeners (onclick)
+           
+           Users can navigate through multiple customer reviews using Previous/Next buttons
+           The carousel keeps track of the current review index and updates the display.
+           ======================================================================== */
+
+        // Array of review objects - demonstrates proper data structure
+        const reviews = [
+            {
+                quote: "We had a great time and loved all the different activities that we did",
+                author: "8th Gourock Guides"
+            },
+            {
+                quote: "The archery was brilliant, but not as good as axe throwing! I got one of my axes right in the middle of the target",
+                author: "Scott, aged 13"
+            },
+            {
+                quote: "The Scouts loved every second of it, especially the powerboating",
+                author: "Martin Bainbridge, Scout Leader"
+            },
+            {
+                quote: "I was really scared about the abseiling but the instructor Mike was really encouraging. Thanks Mike!",
+                author: "Sophie, aged 10"
+            },
+            {
+                quote: "Thank you to all the staff who worked so hard, in awful weather, to make sure that all the pupils had an amazing experience",
+                author: "Mrs Kahn, Hillend Primary School"
+            }
+        ];
+
+        // Track current review index
+        let currentReviewIndex = 0;
+
+        // Initialize carousel on page load
+        function initializeCarousel() {
+            displayReview(currentReviewIndex);
+            // Update total review count
+            document.getElementById('review-total').textContent = reviews.length;
+        }
+
+        // Display review at specified index
+        function displayReview(index) {
+            // Boundary checking - conditional logic
+            if(index < 0) {
+                currentReviewIndex = reviews.length - 1;
+            } else if(index >= reviews.length) {
+                currentReviewIndex = 0;
+            } else {
+                currentReviewIndex = index;
+            }
+
+            // Get current review from array
+            const review = reviews[currentReviewIndex];
+
+            // Update DOM with review content
+            document.getElementById('carousel-quote').textContent = '"' + review.quote + '"';
+            document.getElementById('carousel-author').textContent = '— ' + review.author;
+            document.getElementById('review-counter').textContent = currentReviewIndex + 1;
+        }
+
+        // Navigate to next review
+        function nextReview() {
+            displayReview(currentReviewIndex + 1);
+        }
+
+        // Navigate to previous review
+        function previousReview() {
+            displayReview(currentReviewIndex - 1);
+        }
+
+        // Initialize carousel when page loads
+        window.addEventListener('load', function() {
+            initializeCarousel();
+        });
+
     </script>
 </body>
 </html>
